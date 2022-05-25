@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  # api server
+  server:
+    container_name: server
+    restart: always
+    build:
+      context: ./server
+      dockerfile: ./docker/Dockerfile
+      target: developement
+    volumes:
+      - ./server:/app/main
+    environment:
+      - SERVER_PORT=3000
+    ports:
+      - 3000:3000
