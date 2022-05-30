@@ -2,8 +2,8 @@ version: '3.7'
 
 services:
   # api server
-  server:
-    container_name: server
+  server1:
+    container_name: server-1
     restart: always
     build:
       context: ./server
@@ -15,3 +15,42 @@ services:
       - SERVER_PORT=3000
     ports:
       - 3000:3000
+    networks:
+      - back-end
+
+  # api server
+  # server2:
+  #   container_name: server-2
+  #   restart: always
+  #   build:
+  #     context: ./server
+  #     dockerfile: ./docker/Dockerfile
+  #     target: developement
+  #   volumes:
+  #     - ./server:/app/main
+  #   environment:
+  #     - SERVER_PORT=3001
+  #   ports:
+  #     - 3001:3001
+  #   networks:
+  #     - back-end
+
+  # Proxy Server
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: "unless-stopped"
+    depends_on:
+      - server1
+      # - server2
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - back-end
+
+networks:
+  back-end:
+    driver: bridge
