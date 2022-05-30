@@ -11,6 +11,7 @@ services:
       target: developement
     volumes:
       - ./server:/app/main
+      - /app/main/node_modules
     environment:
       - SERVER_PORT=3000
     ports:
