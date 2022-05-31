@@ -5,5 +5,7 @@ files:
     destination: /home/ec2-user/beob-playground
     overwrite: yes
 hooks:
+  BeforeInstall:
+    - location: /scripts/init-docker.sh
   AfterInstall:
     - location: /scripts/deploy.sh
