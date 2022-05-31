@@ -7,5 +7,8 @@ files:
 hooks:
   BeforeInstall:
     - location: /scripts/init-docker.sh
+      timeout: 60
   AfterInstall:
     - location: /scripts/deploy.sh
+      timeout: 30
+      runas: root
