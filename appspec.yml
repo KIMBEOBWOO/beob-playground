@@ -1,0 +1,10 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ec2-user/beob-playground
+    overwrite: yes
+hooks:
+  AfterInstall:
+  - location: /scripts/deploy.sh
+      timeout: 60
