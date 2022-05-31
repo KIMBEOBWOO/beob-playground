@@ -2,4 +2,4 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-
 
 sudo chmod +x /usr/local/bin/docker-compose
 
-docker-compose -v
+sudo docker-compose -v
