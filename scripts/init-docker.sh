@@ -15,6 +15,14 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 docker-compose -v
 
-ls
+echo "Pwd ... "
+echo ""
 pwd
+
+echo "Directories ... "
+echo ""
+ls
+
+echo "Docker compose down ... "
+echo ""
 docker-compose down
