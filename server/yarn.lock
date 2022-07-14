@@ -646,6 +646,11 @@
     tslib "2.4.0"
     uuid "8.3.2"
 
+"@nestjs/mapped-types@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/mapped-types/-/mapped-types-1.1.0.tgz#54a9fa61079635dd6c3c75fd9593f20b2302a55b"
+  integrity sha512-+2kSly4P1QI+9eGt+/uGyPdEG1hVz7nbpqPHWZVYgoqz8eOHljpXPag+UCVRw9zo2XCu4sgNUIGe8Uk0+OvUQg==
+
 "@nestjs/platform-express@^8.0.0":
   version "8.4.5"
   resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-8.4.5.tgz#5683da37b4e5463a4f26e78cb5fb1ba75e94440c"
@@ -676,10 +681,10 @@
     optional "0.1.4"
     tslib "2.4.0"
 
-"@nestjs/typeorm@^8.0.4":
-  version "8.0.4"
-  resolved "https://registry.yarnpkg.com/@nestjs/typeorm/-/typeorm-8.0.4.tgz#ce6dbacb4c2a75e7d341da90a0d355bffd3149b4"
-  integrity sha512-l1Fv+XicVFs7j4EKTq32lJ6QomYLlXZwvug9zcts6IBDVd8rYYBPy28pyBMDzLtnm0zD4tcW298rpylL7eTZtQ==
+"@nestjs/typeorm@8.1.3":
+  version "8.1.3"
+  resolved "https://registry.yarnpkg.com/@nestjs/typeorm/-/typeorm-8.1.3.tgz#2567e3362ba38c57997cf6d730e1dfeec048b205"
+  integrity sha512-FBfSRMvC62rOL5qq4XaYrhDwE0zHKrhEGIHCeJJanpzRYbSDCAmrmiOB8d6deYYcNoUv+26O1tGBqOw68TcMNA==
   dependencies:
     uuid "8.3.2"
 
