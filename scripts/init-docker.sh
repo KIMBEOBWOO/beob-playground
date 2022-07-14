@@ -20,6 +20,3 @@ pwd
 
 echo "Directories ... "
 ls
-
-echo "Docker compose down ... "
-docker-compose down
