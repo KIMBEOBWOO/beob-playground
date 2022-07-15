@@ -10,6 +10,10 @@ import { Module } from '@nestjs/common';
         password: 'wjdrms15!',
       },
     }),
+
+    BullModule.registerQueue({
+      name: 'file-upload',
+    }),
   ],
   exports: [BullModule],
 })
