@@ -5,10 +5,12 @@ import { Module } from '@nestjs/common';
   imports: [
     BullModule.forRoot({
       redis: {
-        host: 'localhost',
+        host: 'redis',
         port: 6379,
+        password: 'wjdrms15!',
       },
     }),
   ],
+  exports: [BullModule],
 })
 export class RedisModule {}

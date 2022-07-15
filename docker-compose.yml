@@ -45,9 +45,9 @@ services:
       - '6379:6379'
     restart: always
     volumes:
-      - /redis/data:/data
-      - /redis/conf/redis.conf:/usr/local/etc/redis/redis.conf
-      - /redis/acl/users.acl:/etc/redis/users.acl
+      - ./redis/data:/data
+      - ./redis/conf/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./redis/acl/users.acl:/etc/redis/users.acl
     networks:
       - back-end
 
