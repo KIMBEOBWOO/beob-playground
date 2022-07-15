@@ -19,23 +19,6 @@ services:
     networks:
       - back-end
 
-  # api server
-  # server2:
-  #   container_name: server-2
-  #   restart: always
-  #   build:
-  #     context: ./server
-  #     dockerfile: ./docker/Dockerfile
-  #     target: developement
-  #   volumes:
-  #     - ./server:/app/main
-  #   environment:
-  #     - SERVER_PORT=3001
-  #   ports:
-  #     - 3001:3001
-  #   networks:
-  #     - back-end
-
   # Proxy Server
   nginx:
     image: nginx:latest
@@ -52,6 +35,38 @@ services:
     networks:
       - back-end
 
+  # Redis Server
+  redis:
+    container_name: redis
+    image: redis:latest
+    hostname: redis
+    command: redis-server --requirepass wjdrms15! --port 6379
+    ports:
+      - '6379:6379'
+    restart: always
+    volumes:
+      - /redis/data:/data
+      - /redis/conf/redis.conf:/usr/local/etc/redis/redis.conf
+      - /redis/acl/users.acl:/etc/redis/users.acl
+    networks:
+      - back-end
+
 networks:
   back-end:
     driver: bridge
+  # api server
+  # server2:
+  #   container_name: server-2
+  #   restart: always
+  #   build:
+  #     context: ./server
+  #     dockerfile: ./docker/Dockerfile
+  #     target: developement
+  #   volumes:
+  #     - ./server:/app/main
+  #   environment:
+  #     - SERVER_PORT=3001
+  #   ports:
+  #     - 3001:3001
+  #   networks:
+  #     - back-end
